@@ -33,10 +33,11 @@ return [
     // 标签库标签结束标记
     'taglib_end'   => '}',
 
-    'view_base' => '..'.DIRECTORY_SEPARATOR.'theme'.DIRECTORY_SEPARATOR,
+    'view_base' => 'theme'.DIRECTORY_SEPARATOR.config('theme').DIRECTORY_SEPARATOR,
 
     // 模板参数
     'tpl_replace_string' => [ // 视图输出字符串内容替换
-        '__static__' => DIRECTORY_SEPARATOR.'static'.DIRECTORY_SEPARATOR, 
+        '__static__' => DIRECTORY_SEPARATOR.'static', 
+        '__theme__' => DIRECTORY_SEPARATOR.'theme'.DIRECTORY_SEPARATOR.config('theme'),
     ],
 ];

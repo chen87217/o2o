@@ -18,6 +18,18 @@ class Admin extends Controller
 
     public function loginAction(){
     	$input = $this->request;
-    	p($input->param('userName'));
+    	//p($input->param('userName'));
+    	
+    	//p($this->request->isPost());
+
+    	//p(input('post.'));
+    	
+    	$res = [
+    		'userName' => input('post.userName'),
+    		'isLogin' => true,
+    		'count' => 1,
+    	];
+
+    	return result($res, 1);
     }
 }
