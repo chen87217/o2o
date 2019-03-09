@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页面</title>
+	<link href="__theme__/assets/css/common.css" rel="stylesheet" />
+	<link href="__theme__/assets/css/login.css" rel="stylesheet" />
+	
+	<style type='text/css'>
+		.main .login-box{ 
+			width: 640px;
+			height: 100%;
+			margin:auto auto;
+			background: url(__static__/images/loginbox.png) no-repeat;
+			background-size: 100% auto;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class='header-container'></div>
+    	<div class="main-container">
+        	<div class='main'>
+				<div class="login-box">
+	                <div class="logo"></div>
+	                <h1></h1>
+
+	                <form>
+		                <div class='input-group'>
+							<div class='input-row'>
+			                    <label for="userName">用户名</label>
+			                    <span></span>
+			                    <input type="text" name='userName' />
+			                </div>
+			                <div class='input-row'>
+			                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+			                    <span></span>
+			                    <input type="password" name='password' />
+			                </div>
+			                <div class='input-row'>
+			                    <label for="valiDate">验证码</label>
+			                    <input type="text" name='valiDate' />
+			                    <span class="value">X3D5</span>
+			                </div>
+		                </div>
+		                <div class='button-group'>
+		                    <input type="button" class="button" value="取消"  />
+		                    <input type="button" class="button" value="登录"  id='sumbit' />
+		                </div>
+		            </form>
+	            </div>
+        	</div>
+        </div>
+        <div class='footer-container'>
+        	<p>CopyRight&nbsp;2014&nbsp;&nbsp;陈乾坤&nbsp;&nbsp;版权所有&nbsp;&nbsp;</p>
+        </div>
+	   
+	</div>
+</body>
+
+<script src='__static__/js/jquery.js'></script>
+<script src='__static__/js/jquery.serializejson.js'></script>
+
+<script type="text/javascript">
+	
+
+	$('#sumbit').click(function(){
+		var form = $('form').serializeJSON();
+
+		$.ajax({ 
+			url: "{:url('/loginAction')}", 
+			data: form,
+			type:"POST",    
+			success: function(res){	
+				setTimeout(window.location.href="{:url('/main')}",3);		
+			}
+  		});
+	});
+</script>
+
+</html>

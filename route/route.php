@@ -21,11 +21,13 @@ Route::rule('login', 'admin/Admin/login');
 
 Route::rule('loginAction', 'admin/Admin/loginAction', 'POST');
 
+Route::rule('/main', 'admin/Main/main')->middleware('check_login');
+
 Route::rule('/', 'admin/Main/index')->middleware('check_login');
 
 Route::group('admin',function(){
 	
-	//Route::rule('hello/:name?', 'Main/hello');
+	Route::rule('hello/:name?', 'Main/hello');
 })->middleware('check_login');
 
 return [

@@ -1,0 +1,132 @@
+<style type="text/css">
+    .header-top-left, .header-top-right {
+        height: 64px;
+        display: flex; 
+        align-items: center;
+    }
+    /* top 左边样式 */ 
+    .header-top-left .logo-container{ position: relative; }
+    .header-top-left .logo-container a{ position: absolute; bottom: 5px; right: -20px; }
+    .header-top-left .user-info{ display: flex; flex-flow: row; margin-left: 40px;  }
+
+    .header-top-left .user-info>.user-avatar
+    { 
+        position: relative; 
+        background: url(__theme__/assets/images/facebg.png) no-repeat;
+        height: 40px;
+        width: 40px;
+    }
+    .header-top-left .user-info>.user-avatar>.user-face
+    { 
+        margin-left: 2px;
+        margin-top: 2px;
+        background: url(__theme__/assets/images/face.png) no-repeat;
+        height: 34px;
+        width: 34px;
+    }
+    .header-top-left .user-info>.user-avatar>i.info-num{ 
+        position: absolute; 
+        right:-4px; 
+        top: -4px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        background: url(__theme__/assets/images/msg.png) no-repeat;
+        font-style: normal;
+        color: #fff;
+        text-align: center;
+    }
+    .header-top-left .user-name{ 
+        margin-left: 10px; 
+        line-height: 40px;
+        color: #fff;
+    }
+    
+    /* top 右边样式 */ 
+    .header-top-right .setting-skin{ 
+        display: flex;
+        flex-flow: row;
+        line-height: 49px; 
+        width: 82px;
+        height: 29px;
+        margin: auto auto;
+        background: url(__theme__/assets/images/skin-bg.png) no-repeat; 
+    }
+    .header-top-right .setting-skin>span{
+        margin: auto auto;
+        line-height: 28px;
+    }
+    
+    .header-top-right .skin-icon{ 
+        width: 10px; 
+        height: 11px;
+        background: url(__theme__/assets/images/skinicon.png) no-repeat;  
+        margin: auto auto;
+    }
+    
+    .header-top-right .arrow-icon{
+        width: 7px; 
+        height: 4px;
+        background: url(__theme__/assets/images/skinxl.png) no-repeat;  
+        margin: auto auto;
+    }
+    
+    .header-top-right .arrow-icon:hover{ 
+        background-position: 100% 0;  
+     }
+
+    .header-top-right ul.setting-main{
+        display: flex;
+        flex-flow: row;
+        margin: auto auto;
+        padding-left: 8px;
+    }
+    .header-top-right ul.setting-main>li{  width:38px; text-align: center;}
+    .header-top-right ul.setting-main>li a{ color:#fff;}
+    
+    .header-top-right .close-btn{
+        display: block;
+        margin-top: 2px;
+        margin-left: 12px;
+        height: 14px;
+        width: 14px;
+        background: url(__theme__/assets/images/quit.png) no-repeat;
+    }
+
+    .header-top-right .close-btn:hover{
+        background-position: 100% 0;
+    }
+</style>
+
+
+
+<div class='header-top-left'>
+    <div class='logo-container'>
+        <img src='__theme__/assets/images/logo.png' />
+        <a href="javascript:;" class="logo-icon">
+            <img src='__theme__/assets/images/topxl.png' />
+        </a>
+    </div>
+
+    <div class='user-info'>
+        <a href="javascript:;" class="user-avatar">
+            <div class='user-face'></div>
+            <i class="info-num">2</i>
+        </a>
+        <div class="user-name">admin</div>
+    </div>
+</div>
+
+<div class='header-top-right'>
+    <div class="setting-skin">
+        <i class="skin-icon"></i>
+        <span class="text">皮肤</span>
+        <i class="arrow-icon"></i>
+    </div>
+    <ul class="setting-main">
+        <li><a href="javascript:;">桌面</a></li>
+        <li><a href="javascript:;">设置</a></li>
+        <li><a href="javascript:;">帮助</a></li>
+        <li><a href="javascript:;" class="close-btn exit"></a></li>
+    </ul>
+</div>

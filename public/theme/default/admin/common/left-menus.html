@@ -1,0 +1,212 @@
+<style type='text/css'>
+    .sidebar{ position: relative; width: 203px;  }
+    .sidebar-flex-a{ display: flex; flex-direction: row; align-items: center; margin-left: 12px;}
+        
+    .sidebar-title {
+        height: 40px;
+        line-height: 40px;
+        background: url(__theme__/assets/images/leftmenubg.png) repeat-x;
+    }
+
+    .sidebar-bg {
+        position: absolute;
+        width: 4px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url(__theme__/assets/images/leftbg.png) repeat-y right;
+        z-index: 2;
+    }
+
+    h2.sidebar-title a .h2-icon {
+        width: 12px;
+        height: 12px;
+        background: url(__theme__/assets/images/lefticon.png);
+    }
+    h2.sidebar-title a span {
+        color: #fff;
+        font-size: 14px;
+        margin-left: 11px;
+    }
+    .sidebar-nav{ 
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2px; 
+        background: url(__theme__/assets/images/leftyy.png) repeat-x bottom; 
+    }
+    .sidebar-nav-li{ 
+        height: 36px;
+        line-height: 36px;
+        background: url(__theme__/assets/images/leftmenubg1.png) repeat-x;
+    }
+
+    .sidebar-nav-ivon
+    {
+        width: 9px;
+        height: 9px;
+        background: url(__theme__/assets/images/leftmenu.png) no-repeat center center;
+    }
+    .sidebar-nav-text{
+        margin-left: 11px;
+        color: #4a4a4a;
+        font-size: 14px;
+    }
+
+    .sidebar-subnav {
+        display: none;
+    } 
+    .sidebar-subnav-li{   height: 30px; line-height: 30px;}  
+    .sidebar-subnav-icon{  
+        width: 12px;
+        height: 15px;
+        background: url(__theme__/assets/images/leftlist.png); 
+    }
+    .sidebar-subnav-text{ margin-left: 10px; color: #000; }
+
+    .sidebar-nav-li.current { background: url(__theme__/assets/images/mbbg.png) repeat-x; }
+    .sidebar-nav-li.current .sidebar-nav-ivon {
+        background: url(__theme__/assets/images/leftmenu1.png) no-repeat center center;
+    }
+    .sidebar-nav-li.current{ height: auto; }
+    .sidebar-nav-li.current .sidebar-subnav{
+        display: block;
+    } 
+       
+    .sidebar-subnav-li.current{
+        border-left: 3px solid #f24a39;
+        background: #38a3d5;
+        color: #fff;
+    }
+</style>
+
+
+<div class='sidebar'>
+    <div class="sidebar-bg"></div>
+    <h2 class='sidebar-title'>
+        <a href="javascript:;" class='sidebar-flex-a'>
+            <i class="h2-icon" title="切换到树型结构"></i>
+            <span>安全管理</span>
+        </a>
+    </h2>
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-li">
+            <a href="javascript:;" class='sidebar-flex-a'>
+                <i class="sidebar-nav-ivon"></i>
+                <span class="sidebar-nav-text">新闻管理</span>
+            </a>
+            <ul class="sidebar-subnav">
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="8">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">新闻视频管理</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="9">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">新闻频道管理</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="10">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">地方新闻管理</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="11">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">自定义设置1</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+       <li class="sidebar-nav-li">
+            <a href="javascript:;" class='sidebar-flex-a'>
+                <i class="sidebar-nav-ivon"></i>
+                <span class="sidebar-nav-text">用户信息设置</span>
+            </a>
+            <ul class="sidebar-subnav">
+                <li class="sidebar-subnav-li" href="{:url('/')}" data-id="1">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">首页</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="admin{:url('hello/test3')}" data-id="2">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">表单</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="admin{:url('hello/test3')}" data-id="3">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">表格</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="admin{:url('hello/test5')}" data-id="4">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">自定义设置2</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+          
+        <li class="sidebar-nav-li">
+            <a href="javascript:;" class='sidebar-flex-a'>
+                <i class="sidebar-nav-ivon"></i>
+                <span class="sidebar-nav-text">工作安排</span>
+            </a>
+            <ul class="sidebar-subnav">
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="5">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">工作安排查询1</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="6">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">安排管理1</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="7">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">类型选择1</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-nav-li">
+            <a href="javascript:;" class='sidebar-flex-a'>
+                <i class="sidebar-nav-ivon"></i>
+                <span class="sidebar-nav-text">数据管理</span>
+            </a>
+            <ul class="sidebar-subnav">
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="12">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">工作安排查询2</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="13">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">安排管理2</span>
+                    </a>
+                </li>
+                <li class="sidebar-subnav-li" href="{:url('/login')}" data-id="14">
+                    <a href="javascript:;" class='sidebar-flex-a'>
+                        <i class="sidebar-subnav-icon"></i>
+                        <span class="sidebar-subnav-text">类型选择2</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

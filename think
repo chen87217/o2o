@@ -15,8 +15,8 @@ namespace think;
 // 加载基础文件
 require __DIR__ . '/thinkphp/base.php';
 
-// 应用初始化
-Container::get('app')->path(__DIR__ . '/application/')->initialize();
+// 应用初始化  地址参数要改成相应的
+Container::get('app')->path(__DIR__ . '/app/')->initialize();
 
 // 控制台初始化
 Console::init();

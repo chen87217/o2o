@@ -1,0 +1,63 @@
+<style type="text/css">
+    .header-bottom-left, .header-bottom-nav, .header-bottom-right{
+        height: 58px;
+        display: flex; 
+        align-items: center;
+    }
+
+    .header-bottom-left{ width: 56px;  }
+    .header-bottom-left a{ padding-left: 30px; }
+
+    .header-bottom-nav{ flex: 1; overflow: hidden;}
+    .header-bottom-nav>.nav{  
+        display: flex; 
+        flex-flow: row; 
+        align-items: center; 
+        width: 100%;  
+        height: 100%;  
+    }
+
+    .header-bottom-nav>.nav>li{ width: 93px; text-align: center;  }
+    .header-bottom-nav>.nav>li>a{ color: #4f4f4f; }
+
+    .header-bottom-right { width: 100px; }
+    .header-bottom-right a{  height: 22px; width: 22px;}
+    .header-bottom-right .nav-prev-btn{
+         background: url(__theme__/assets/images/leftright.png) no-repeat;
+    }
+    .header-bottom-right .nav-next-btn{
+         background: url(__theme__/assets/images/leftright.png) no-repeat -23px -23px;
+    }
+</style>
+
+
+ <div class="header-bottom-left">
+    <a href="javascript:;" >
+        <img src='__theme__/assets/images/home.png' width='24px' height="24px" />
+    </a>
+</div>
+
+<div class="header-bottom-nav">
+    <ul class="nav">
+        <li><a href="javascript:;">平台管理</a></li>
+        <li><a href="javascript:;">系统管理</a></li>
+        <li><a href="javascript:;">安全管理</a></li>
+        <li><a href="javascript:;">数据中心</a></li>
+        <li><a href="javascript:;">表单管理</a></li>
+        <li><a href="javascript:;">流程管理</a></li>
+        <li><a href="javascript:;">交流中心</a></li>
+        <li><a href="javascript:;">企业邮箱</a></li>
+        <li><a href="javascript:;">个人设置</a></li>
+        <li><a href="javascript:;">交流中心</a></li>
+        <li><a href="javascript:;">企业邮箱</a></li>
+        <li><a href="javascript:;">个人设置</a></li>
+        <li><a href="javascript:;">交流中心</a></li>
+        <li><a href="javascript:;">企业邮箱</a></li>
+        <li><a href="javascript:;">个人设置</a></li>
+    </ul>
+</div>
+
+<div class="header-bottom-right">
+    <a href="javascript:;" class="nav-prev-btn"></a>
+    <a href="javascript:;" class="nav-next-btn"></a>
+</div>

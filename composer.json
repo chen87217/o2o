@@ -17,7 +17,11 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "topthink/framework": "5.1.*"
+        "topthink/framework": "5.1.*",
+        "topthink/think-captcha": "^2.0",
+        "guzzlehttp/guzzle": "~6.0",
+        "ext-json": "*",
+        "topthink/think-migration": "2.*"
     },
     "autoload": {
         "psr-4": {

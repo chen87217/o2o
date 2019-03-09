@@ -1,0 +1,99 @@
+<style type="text/css">
+.main{ flex: 1; }
+        
+.main> .flex-full-div{ flex-direction: column; padding-top: 8px;}
+.main .title{
+    position: relative;
+    height: 32px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.main .tab{ display: flex; flex-flow: row; padding-left: 7px; }
+.main .tab li{ margin-right: 4px; }
+.main .tab li a{
+    display: block;
+    position: relative;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7; 
+    border-radius: 3px 3px 0 0;
+    color: #0080cc;
+    background: url(__theme__/assets/images/tab1.png) repeat-x; 
+}
+.main .tab li a span
+{
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #000;
+    padding: 0 20px;
+}    
+
+.main .tab li.current a{ 
+    background: url(__theme__/assets/images/tab2.png) repeat-x; 
+}
+
+.main .tab li a .close-tab {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 1px;
+    width: 12px;
+    height: 12px;
+    background: url(__theme__/assets/images/close.png);
+    
+}
+
+.main .title .tab-close:hover {
+
+    background: url(__theme__/assets/images/close2.png) -17px 0;
+
+}
+.main .title .tab-close {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 17px;
+    height: 17px;
+    background: url(__theme__/assets/images/close2.png);
+    cursor: pointer;
+    margin: 4px 14px 0 0;
+}
+
+.main .content{
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.outwindow{ 
+    position: fixed;
+    left: -10000px;
+    top: -10000px;
+}
+</style>
+
+
+<div class="main">
+   <div class='flex-full-div'>
+       <div class="title">
+		    <i class="sidebar-show"></i>
+		    <ul class="tab">
+		       
+		    </ul>
+		    <i class="tab-more" style="display: none;"></i>
+		    <i class="tab-close"></i>
+		</div>
+		<div class="content">
+		   
+		</div>
+   </div>
+</div>
+
+
+<script type="text/javascript" src='__theme__/assets/js/menu.js'></script>
+
+<script type="text/javascript">
+    var menu = new Menu({
+        defaultSelect: $('.sidebar-nav').find('li[data-id="1"]')    
+    });
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script type="text/javascript" src='__static__/js/jquery.js'></script> 
+    <link href="__theme__/assets/css/common.css" rel="stylesheet" />
+    
+    <style type='text/css'>
+        .container { display: flex; flex-direction: column; }
+        
+        /* 头部 样式*/
+        .header-container{ height: 112px; }
+        .header-container>.flex-full-div{ 
+            flex-direction: column; 
+            background: url(__theme__/assets/images/topbg.png) repeat-x;
+        }
+        
+        .header-container .header-top-container { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .header-container .header-bottom-container{
+            display: flex;
+            flex-direction: row;
+            height: 58px;
+        }
+        
+        /* 中间部分样式 */    
+        .main-container{ flex: 1; }
+        .main-container>.flex-full-div{ flex-direction: row; }
+        
+       
+        .footer-container{
+            height: 26px;
+            background: url(__theme__/assets/images/footerbg.png) repeat-x;
+        }
+        .footer-container>div{  align-items:center;  justify-content:center;  }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class='header-container'>
+            <div class='flex-full-div'>
+                <div class='header-top-container'>
+                    {include file='common/header' /}
+                </div>
+
+                <div class='header-bottom-container'>
+                   {include file='common/tools' /}
+                </div>
+            </div>
+        </div>
+
+        <div class='main-container'>
+           <div class='flex-full-div'>
+                {include file='common/left-menus' /}
+
+                {include file='common/content' /}
+            </div>
+        </div>
+
+        <div class='footer-container'>
+            <div class='flex-full-div'>
+                {include file='common/footer' /}
+            </div>
+        </div>
+    
+    </div>
+    
+    
+
+
+</body>
+
+
+</html>

@@ -13,17 +13,19 @@ class Admin extends Controller
 
     public function login()
     {
+        //$this->view->engine->layout(false);
+        //$this->view->engine->layout('Layout/newlayout');
         return $this->fetch();
     }
 
     public function loginAction(){
-    	$input = $this->request;
     	//p($input->param('userName'));
     	
     	//p($this->request->isPost());
 
     	//p(input('post.'));
     	
+        session('user', input('post.userName'));
     	$res = [
     		'userName' => input('post.userName'),
     		'isLogin' => true,
