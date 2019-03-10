@@ -6,6 +6,8 @@
     position: relative;
     height: 32px;
     border-bottom: 1px solid #d7d7d7;
+    display: flex;
+    flex-direction: row;
 }
 
 .main .tab{ display: flex; flex-flow: row; padding-left: 7px; }
@@ -70,6 +72,36 @@
     left: -10000px;
     top: -10000px;
 }
+
+.main .title .tab-more {
+
+    display: none;
+    margin: 8px 0 0 5px;
+    width: 15px;
+    height: 14px;
+    background: url(__theme__/assets/images/switch-system/tabright.png);
+    cursor: pointer;
+
+}
+
+
+/*更多tab样式*/  
+.more-bab-list{ display:none;position:absolute;top:39px;left:250px;border-top:1px solid #d7d7d7;}
+.more-bab-list ul{background:#f2f2f2;padding:12px 0;}
+.more-bab-list ul li {cursor:pointer;}
+.more-bab-list ul li i{display:none;position:absolute;width:6px;height:6px;top:12px;right:10px;background:url(.__theme__/assets/images/switch-system/closed.png);}
+.more-bab-list ul li span{position:relative; display:block;padding:6px 30px 6px 20px;}
+.more-bab-list ul li:hover span{ background:#21a6d7;color:#fff;}
+.more-bab-list ul li:hover i{display:block;}
+.more-bab-list ul li i:hover + span{background:#21a6d7;color:#fff;}
+
+.more-bab-list .opt-panel-ml{position:absolute;top:0;bottom:5px;left:-6px;width:6px;background:url(.__theme__/assets/images/switch-system/sleft.png);}
+.more-bab-list .opt-panel-mr{position:absolute;top:0;bottom:5px;right:-6px;width:6px;background:url(.__theme__/assets/images/switch-system/sright.png);}
+.more-bab-list .opt-panel-bc{position:absolute;left:5px;bottom:-9px;right:5px;height:9px;background:url(.__theme__/assets/images/switch-system/sdown.png);}
+.more-bab-list .opt-panel-br{position:absolute;bottom:-9px;right:-6px;width:11px;height:14px;background:url(.__theme__/assets/images/switch-system/yj.png);}
+.more-bab-list .opt-panel-bl{position:absolute;bottom:-9px;left:-6px;width:11px;height:14px;background:url(.__theme__/assets/images/switch-system/yjl.png);}
+
+
 </style>
 
 
@@ -80,7 +112,7 @@
 		    <ul class="tab">
 		       
 		    </ul>
-		    <i class="tab-more" style="display: none;"></i>
+		    <i class="tab-more"></i>
 		    <i class="tab-close"></i>
 		</div>
 		<div class="content">
@@ -89,11 +121,26 @@
    </div>
 </div>
 
+<div class="more-bab-list">
+    <ul></ul>
+    <div class="opt-panel-ml"></div>
+    <div class="opt-panel-mr"></div>
+    <div class="opt-panel-bc"></div>
+    <div class="opt-panel-br"></div>
+    <div class="opt-panel-bl"></div>
+</div>
 
 <script type="text/javascript" src='__theme__/assets/js/menu.js'></script>
 
 <script type="text/javascript">
     var menu = new Menu({
         defaultSelect: $('.sidebar-nav').find('li[data-id="1"]')    
+    });
+
+    $(document).click(function(e) {
+        if(!$(e.target).is('.tab-more')){   
+             $('.tab-more').removeClass('active');
+             $('.more-bab-list').hide();
+        }
     });
 </script>

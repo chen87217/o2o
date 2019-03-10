@@ -1,6 +1,6 @@
 <style type="text/css">
     .header-bottom-left, .header-bottom-nav, .header-bottom-right{
-        height: 58px;
+        height: 48px;
         display: flex; 
         align-items: center;
     }
@@ -8,17 +8,21 @@
     .header-bottom-left{ width: 56px;  }
     .header-bottom-left a{ padding-left: 30px; }
 
-    .header-bottom-nav{ flex: 1; overflow: hidden;}
-    .header-bottom-nav>.nav{  
+    .header-bottom-nav{ flex: 1; }
+    .header-bottom-nav>div{ position: relative; height: 48px; width:100%; overflow: hidden;}
+   
+    .header-bottom-nav .nav{ 
         display: flex; 
         flex-flow: row; 
         align-items: center; 
-        width: 100%;  
-        height: 100%;  
+        
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .header-bottom-nav>.nav>li{ width: 93px; text-align: center;  }
-    .header-bottom-nav>.nav>li>a{ color: #4f4f4f; }
+    .header-bottom-nav .nav>li{ width: 93px; text-align: center; line-height: 48px; height: 48px;  }
+    .header-bottom-nav .nav>li>a{ color: #4f4f4f; }
 
     .header-bottom-right { width: 100px; }
     .header-bottom-right a{  height: 22px; width: 22px;}
@@ -38,26 +42,118 @@
 </div>
 
 <div class="header-bottom-nav">
-    <ul class="nav">
-        <li><a href="javascript:;">平台管理</a></li>
-        <li><a href="javascript:;">系统管理</a></li>
-        <li><a href="javascript:;">安全管理</a></li>
-        <li><a href="javascript:;">数据中心</a></li>
-        <li><a href="javascript:;">表单管理</a></li>
-        <li><a href="javascript:;">流程管理</a></li>
-        <li><a href="javascript:;">交流中心</a></li>
-        <li><a href="javascript:;">企业邮箱</a></li>
-        <li><a href="javascript:;">个人设置</a></li>
-        <li><a href="javascript:;">交流中心</a></li>
-        <li><a href="javascript:;">企业邮箱</a></li>
-        <li><a href="javascript:;">个人设置</a></li>
-        <li><a href="javascript:;">交流中心</a></li>
-        <li><a href="javascript:;">企业邮箱</a></li>
-        <li><a href="javascript:;">个人设置</a></li>
-    </ul>
+    <div>
+        <ul class="nav">
+            <li><a href="javascript:;">平台管理</a></li>
+            <li><a href="javascript:;">系统管理</a></li>
+            <li><a href="javascript:;">安全管理</a></li>
+            <li><a href="javascript:;">数据中心</a></li>
+            <li><a href="javascript:;">表单管理</a></li>
+            <li><a href="javascript:;">流程管理</a></li>
+            <li><a href="javascript:;">交流中心</a></li>
+            <li><a href="javascript:;">企业邮箱</a></li>
+            <li><a href="javascript:;">个人设置</a></li>
+            <li><a href="javascript:;">交流中心</a></li>
+            <li><a href="javascript:;">企业邮箱</a></li>
+            <li><a href="javascript:;">个人设置</a></li>
+
+            <li><a href="javascript:;">交流中心</a></li>
+            <li><a href="javascript:;">企业邮箱</a></li>
+            <li><a href="javascript:;">个人设置</a></li>
+        </ul>
+    </div>
 </div>
 
 <div class="header-bottom-right">
     <a href="javascript:;" class="nav-prev-btn"></a>
     <a href="javascript:;" class="nav-next-btn"></a>
 </div>
+
+
+<script type="text/javascript">
+    (function(){
+        var current = 1;
+        var total_len = $('.nav li').length * 93; //ul 总长度
+        
+        //是否可以滚动
+        var is_scroll = total_len > $('.header-bottom-nav div').width()? true: false;
+
+        if(is_scroll){
+            $('.header-bottom-right a').css('display', 'block');
+        }else{
+            $('.header-bottom-right a').css('display', 'none');
+        }
+
+        function currentLeft(){
+            return -(current - 1) * 93; 
+        }
+        
+        $('.header-bottom-right a').click(function(e) {
+            if(!is_scroll){
+                return;
+            }
+            if($(this).hasClass('nav-prev-btn')){
+                var current_ul_len = $('.header-bottom-nav div').width() + (current - 1) * 93;   //左拉长度+容器长度 
+                if( current_ul_len < total_len){
+                    current++;
+                    //$('.nav').css('left', currentLeft());
+                    
+                    $('.nav').animate({'left': currentLeft()}, 200);
+                            
+
+                    // Math.abs($('.nav').css('left')) > 93 ? $('.nav').animate({'left': currentLeft()}, 200) : $('.nav').animate({'left': 0}, 200);
+                }
+            }else{
+                if(current > 1){
+                    current--;
+                    $('.nav').animate({'left': currentLeft()}, 200);
+                    //$('.nav').css('left', currentLeft());
+                }
+            }
+        });
+        
+        
+        
+        // $.each($('.skin-opt li'),function(index, element){
+        //     if((index + 1) % 3 == 0){
+        //         $(this).addClass('third');  
+        //     }
+        //     $(this).css('background',$(this).attr('attr-color'));
+        // });
+        
+        // $('.setting-skin').click(function(e) {
+        //     $('.skin-opt').show();
+        // });
+        
+        // $('.skin-opt').click(function(e) {
+        //     if($(e.target).is('li')){
+        //         alert($(e.target).attr('attr-color'));  
+        //     }
+        // });
+        
+        // $('.hd-top .user-info .more-info').click(function(e) {
+        //    $(this).toggleClass('active'); 
+        //    $('.user-opt').toggle();
+        // });
+        
+        // $('.logo-icon').click(function(e) {
+        //      $(this).toggleClass('active'); 
+        //      $('.system-switch').toggle();
+        // });
+        
+        // hideElement($('.user-opt'), $('.more-info'), function(current, target){
+
+        //     $('.more-info').removeClass('active'); 
+        // });
+        
+        // hideElement($('.skin-opt'), $('.switch-bar'));
+        
+        // hideElement($('.system-switch'), $('.logo-icon'), function(current, target){
+
+        //     $('.logo-icon').removeClass('active'); 
+        // });
+        
+        
+        
+    })();
+</script>
